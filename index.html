@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ui || stream</title>
+    <!-- Materialize CSS Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="heading">
+            
+            <i class="large material-icons hide-on-small-only">play_circle_outline</i>
+            <h1 class="white-text">
+                ui stream
+            </h1>
+        </div>
+
+        <!-- Streaming service & Search bar -->
+          <!-- Streaming service modal -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <h4>Select your streaming service providers:</h4>
+      <form>
+        <label class="streaming-sources" for="netflix">
+            <input type="checkbox" id="netflix" />
+            <span>Netflix</span>
+        </label>
+        <label class="streaming-sources" for="hulu">
+            <input type="checkbox" id="hulu" />
+            <span>Hulu</span>
+        </label>
+        <label class="streaming-sources" for="prime">
+            <input type="checkbox" id="prime" />
+            <span>Amazon Prime</span>
+        </label>
+        <label class="streaming-sources" for="hbomax">
+            <input type="checkbox" id="hbomax" />
+            <span>HBO MAX</span>
+        </label>
+        <label class="streaming-sources" for="disney">
+            <input type="checkbox" id="disney" />
+            <span>Disney+</span>
+        </label>
+        
+    </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light red darken-3 modal-close" type="submit" name="save-settings" id="save-settings" onclick="M.toast({html: 'Settings Saved!'})">Save Settings</button>
+    </div>
+  </div>
+        <div class="row search-settings valign-wrapper">
+            <div class ="col s12 m4 offset-m8">
+                <form id="search-form" class="flex valign-wrapper">
+                    <div class="input-field" id="search-q-div">
+                            <input id="search-query" type="text">
+                            <label for="search-query">Search</label>
+                    </div>
+                    
+                        <button class="btn waves-effect waves-light right red darken-3" type="submit" name="search-Btn" id="search-Btn">Submit</button>
+                    
+                 </form>
+                 <button class="btn waves-effect waves-light red darken-3 modal-trigger" data-target="settings-modal">Select Streaming Services</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Movie Poster & Movie Info Section -->
+        <div class="top-container">
+            <div id="current-streaming-searches">
+                <!-- Display the streaming services that we're searching here -->
+            </div>
+            <!-- <div id="intro-content">
+                <h2>Welcome!</h2>
+                <p>We know firsthand how difficult it can be to comb through the various streaming services to find the exact movie that you're looking for. That's why we built iStream uStream! You can search for any movie and receive links to where that movie is streaming, with priority given to the streaming services you already have!</p>
+                <h3>Getting Started</h3>
+                <p>To get started, click the <strong>Select Streaming Settings</strong> button and select the streaming services you want to search. Want them all? Go ahead and check them all! You just have to select at least one in order to enable our search functionality.</p>
+                <br>
+                <p>Happy streaming!</p>
+            </div> -->
+        </div>
+        <div class="section">
+            
+            <div class="row">
+                <div id="movie-poster" class="col l5 s12 center-align">
+
+                </div>
+                <div id="movie-info" class="col l6 s12 center-align">
+                    <div class="card red darken-4 hidden" id="movie-card-div">
+                        <div class="card-content white-text" id="movie-card">
+                          <span class="card-title" id="movie-title">
+                              <!-- add the movie title here-->
+                          </span>
+                          <p id="movie-plot">
+                            <!-- add the movie plot here-->
+                          </p>
+                        </div>
+                        <hr>
+                        <div class="white-text" id="streaming-links">
+                            <!-- add links to streaming services here -->
+                        </div>
+                    </div>
+                    <div class="alt-offering-section red darken-4 hidden" id="alt-offering-section">
+                        <h3 id="alt-stream-header" class="hidden">Other Ways to Stream</h3>
+                        <div id="alt-offerings" class="flex">
+                            
+                            <div class="alts" id="free-div">
+                                <!-- append for purchase movies here -->
+                            </div>
+                            <div class="alts" id="buy-div">
+                                <!-- append for purchase movies here -->
+                            </div>
+                            <div class="alts" id="sub-div">
+                                <!-- append for purchase movies here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <img src="./assets/images/cage.png" alt="Picture of creepy Nicolas Cage face from Vampire's Kiss" class="caged hidden" id="caged" style="position:fixed;bottom:0;right:0px;z-index:1;margin:0;padding:0;width:210px;">       
+        </div>
+        
+        </main>
+        <footer class="page-footer">
+              <div class="row">
+                <div id="api-section" class="col l6 s12">
+                  <h5 class="white-text">API Attribution Section</h5>
+                  <p class="grey-text text-lighten-4">Movie information provided by <a href="https://www.omdbapi.com/" target="_blank">OMDb API</a>.</p>
+                  <p class="grey-text text-lighten-4">Streaming data provided by <a href="https://api.watchmode.com" target="_blank">Watchmode API</a>.</p>
+
+                </div>
+                <div id="social-links" class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Share with friends</h5>
+                  <ul>
+                    <li><a href="https://facebook.com" target="_blank" class="fa fa-facebook"></a></li>
+                    <li><a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a></li>
+                    <li><a href="https://instagram.com" target="_blank" class="fa fa-instagram"></a></li>
+                    <li><a href="https://youtube.com" target="_blank" class="fa fa-youtube"></a></li>
+                  </ul>  
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              © 2022 Copyright by Japes, Mogwai, Valerie
+              
+              </div>
+            </div>
+          </footer>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

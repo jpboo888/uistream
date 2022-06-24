@@ -1,0 +1,281 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* ===================================*/
+/* HEADER STYLES */
+
+/* Heading styles */
+h1  {
+    /* text-shadow: 2px 2px 2px #1d0c0c; */
+    /* font-family: 'Lobster', cursive ; */
+    display: inline-block
+}
+
+h3 {
+    font-size: 24px;
+    font-weight:300;
+    margin-top: 5px;
+    
+}
+
+h4 {
+    font-size: 20px;
+    margin: 5px auto 10px auto;
+    font-weight:300;
+}
+
+/* Search Bar Styles */
+#search-q-div {
+    width: 70%
+}
+
+#search-Btn {
+
+    margin-left: 20px;
+    width: auto;
+
+}
+
+.search-settings {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+i  {
+    color: white;
+    /* float: right; */
+}
+
+.heading  {
+    background-image: linear-gradient(to top right, rgb(129, 19, 19), rgb(0, 0, 0));
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+/* Additional modal styling */
+.streaming-sources {
+    margin: 0 10px;
+    padding: 10px;
+}
+
+/* ===================================*/
+
+
+/* UTILITY STYLES */
+.flex {
+     display: flex;
+ }
+
+.hidden {
+    display: none;
+}
+
+li  {
+    display: inline-block;
+}
+
+a {
+    color: rgb(209, 221, 224);
+}
+
+a:hover {
+  color: rgb(221, 78, 78);
+  text-decoration: underline;
+}  
+/* ===================================*/
+
+
+/* MOVIE INFO SECTION STYLES */
+#movie-poster  {
+    justify-items: auto;
+}
+
+.section {
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(56, 60, 60));
+    min-height: 500px;
+    width: auto;
+}
+
+/* Styles to display the streaming sources users are actively searching in */
+.streaming-service-display {
+    margin-left: 5px;
+}
+
+.streaming-service-display:not(:last-child):after {
+    content: " \00b7";
+}
+
+.intro-container {
+    margin: 5px 0 5px 30px;
+}
+
+#intro-content h3 {
+    margin-top: 17.5px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    color: white;
+    width: 80%;
+}
+
+/* Styles for the streaming source links */
+
+/* #streaming-links {
+    flex-direction: column;
+}
+.card-action {
+    margin: 0 15px;
+    flex: 1;
+    height: auto;
+    padding: 15px;
+    color: white;
+    border-radius: 3px;
+}
+.card-action ul li {
+    list-style-type: circle;
+    margin-left: 5px;
+    color:rgb(68, 13, 146);
+} */
+
+#streaming-links ul li:not(:last-child):after {
+    content: " \00b7";
+    color:rgb(68, 13, 146);
+}
+
+#streaming-links {
+    padding: 15px 0 25px 0;
+
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.top-container {
+    margin: 5px 0 5px 30px;
+}
+
+#intro-content {
+    width: 75%;
+    margin: 0 auto;
+}
+/* Styles for the alternate streaming offerings section */
+#alt-offerings {
+    flex-direction: column;
+}  
+
+.alts {
+      margin: 0 15px;
+      flex: 1;
+      height: auto;
+  }
+
+.alt-offering-section {
+    padding: 15px;
+    box-shadow: 1px 1px 4px black;
+    color: white;
+    border-radius: 3px;
+}
+
+.alt-offering-section ul li {
+    list-style-type: circle;
+}
+
+.alts ul li {
+    margin-left: 5px;
+}
+
+.alts ul li:not(:last-child):after { 
+    content: " \00b7";
+    color:rgb(68, 13, 146);
+}
+
+/* ===================================*/
+/* FOOTER STYLES */
+.page-footer  {
+    background-image: linear-gradient(to bottom right, rgb(129, 19, 19), rgb(0, 0, 0));
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-instagram, 
+.fa-youtube {
+    padding: 10px;
+    margin: 5px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+  }
+
+/* ===================================*/
+/* MEDIA QUERIES */  
+@media screen and (max-width: 470px) {
+    #search-query {
+        flex: 1 100%;
+        width: 100%;
+    }
+
+
+    h1  {
+        text-align: center;
+    }
+
+    #search-Btn  {
+        width: 100%;
+    }
+
+    #social-links  {
+        text-align: center;
+    }
+
+    #api-section  {
+        display: none;
+    }
+  
+}
+
+
+@media screen and (max-width: 780px) {
+    #search-query {
+        flex: 1 100%;
+        width: 100%;
+    }
+
+    #streaming-settings  {
+        flex: 0 100%;
+    }
+
+    .streaming-sources  {
+        display: inline-block;
+    }
+
+    h1  {
+        text-align: center;
+    }
+
+    #search-Btn  {
+        width: 100%;
+    }
+
+    #social-links,
+    #api-section  {
+        text-align: center;
+    }
+
+    .section {
+        min-height: 500px;
+        width: auto;
+    }
+}
